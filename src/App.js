@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import Motivation from './components/Motivation'
 class App extends Component {
   render() {
 
@@ -20,12 +20,12 @@ class App extends Component {
           <p>Push a project to github and create an app</p>
         </article>
         <br />
-        <article className="page">
+        <article className="page done">
           <p>Look up interview questions for sourcetoad interview </p>
         </article>
 
         <div>
-          <p>I am {"strength"}.</p>
+          <Motivation />
         </div>
       </>
     )
