@@ -19,12 +19,14 @@ class App extends Component {
         <article className="page">
           <p>Push a project to github and create an app</p>
         </article>
-
         <br />
-
         <article className="page">
           <p>Look up interview questions for sourcetoad interview </p>
         </article>
+
+        <div>
+          <p>I am {"strength"}.</p>
+        </div>
       </>
     )
   }
