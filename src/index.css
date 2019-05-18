@@ -31,7 +31,7 @@ h1 {
 }
 
 h2 {
-  padding: .5rem;
+  padding: .6rem;
   padding-bottom: 2rem;
 }
 
@@ -40,10 +40,66 @@ span {
   display: block;
 }
 
-section {
+header {
   background-color: #f6f6f6;
   margin: 0;
   margin-bottom: 5vh;
+}
+
+form {
+  background-image: url("./assets/photos/wc.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 1vh;
+  margin-bottom: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Permanent Marker', sans-serif;
+  border: 1px solid #81cbbc;
+  width: 60%;
+  border-radius: 4px;
+  padding: 5vh;
+  display: block;
+}
+
+textarea {
+  width: 100%;
+  overflow: auto;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #81cbbc;
+  overflow-y: auto;
+  overflow-x: hidden;
+  resize: vertical;
+}
+
+label {
+  color: rgb(3, 3, 46);
+  margin: 0;
+}
+
+form button {
+  background-color: rgb(3, 3, 46);
+  padding: 7px;
+  border: none;
+  width: 10vh;
+  margin-top: .5rem;
+  border-radius: 2px;
+  float: right;
+  margin-right: -10px;
+  background-position: center;
+  transition: opacity 0s;
+}
+
+form button:active {
+  opacity: 0.5
+}
+
+form button i {
+  color: greenyellow;
+  font-size: 1.4vh;
 }
 
 .page:hover {
@@ -51,7 +107,6 @@ section {
 }
 
 .page {
-  font-family: 'Patrick Hand', sans-serif;
   width: 80vw;
   position: relative;
   margin: auto;
@@ -77,6 +132,7 @@ section {
 }
 
 .page p {
+  font-family: 'Patrick Hand', sans-serif;
   padding: 0 30px;
   line-height: 40px;
   margin-bottom: 40px;
