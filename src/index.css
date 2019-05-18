@@ -67,8 +67,10 @@ textarea {
   width: 100%;
   overflow: auto;
   font-family: sans-serif;
-  margin: 0;
+  margin-top: 1px;
   padding: 4px;
+  padding-top: 7px;
+  padding-left: 4.5px;
   border-radius: 4px;
   border: 1px solid #81cbbc;
   overflow-y: auto;
@@ -78,7 +80,6 @@ textarea {
 
 label {
   color: rgb(3, 3, 46);
-  margin: 0;
 }
 
 form button {
