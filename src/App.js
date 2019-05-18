@@ -20,7 +20,7 @@ class App extends Component {
       <>
         <header>
           <h1>3UP</h1>
-          <h2>3 Accomplishments of
+          <h2>Accomplishments of
             <span> {this.state.todaysDate}</span>
           </h2>
         </header>

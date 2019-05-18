@@ -10,7 +10,6 @@ class CreateTask extends Component {
   }
 
   handleFormChange = (e) => {
-    console.log(e.target.value)
     this.setState({
       task: e.target.value,
     })
