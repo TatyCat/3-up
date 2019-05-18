@@ -4,6 +4,16 @@ import ToDoItems from './components/ToDoItems'
 import CreateTask from './components/CreateTask'
 
 class App extends Component {
+  state = {
+    todaysDate: "",
+  }
+
+  componentDidMount() {
+    let getTodaysDate = new Date()
+    this.setState({ todaysDate: getTodaysDate.toDateString() })
+
+  }
+
   render() {
 
     return (
@@ -11,7 +21,7 @@ class App extends Component {
         <header>
           <h1>3UP</h1>
           <h2>3 Accomplishments of
-            <span> Tuesday, May 16, 2019</span>
+            <span> {this.state.todaysDate}</span>
           </h2>
         </header>
         <CreateTask />
@@ -25,5 +35,5 @@ class App extends Component {
 export default App
 
 
-// [] Create Todo card
+// [x] Create Todo card
 // [] Update/Delete todo card

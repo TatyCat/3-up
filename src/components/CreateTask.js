@@ -28,7 +28,7 @@ class CreateTask extends Component {
             <textarea rows="3" cols="50" value={this.state.value} onChange={this.handleFormChange} placeholder="Today I need to..." />
 
           </label>
-          <button><i class="fas fa-check"></i></button>
+          <button><i className="fas fa-check"></i></button>
         </form>
       </>
     );
