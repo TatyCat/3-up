@@ -11,7 +11,6 @@ class App extends Component {
   componentDidMount() {
     let getTodaysDate = new Date()
     this.setState({ todaysDate: getTodaysDate.toDateString() })
-
   }
 
   render() {
@@ -36,4 +35,4 @@ export default App
 
 
 // [x] Create Todo card
-// [] Update/Delete todo card
+// [] Update/Delete modal
