@@ -7,7 +7,7 @@ class toDoItems extends Component {
 
     this.updateState = this.updateState.bind(this)
     this.state = {
-      allTasks: {}
+      allTasks: []
     }
   }
 
@@ -24,12 +24,12 @@ class toDoItems extends Component {
   render() {
     return (
       <>
-        {Object.keys(this.state.allTasks).map((task, i) => {
-          if (this.state.allTasks[task] !== "") {
+        {this.state.allTasks.map((task, i) => {
+          if (task !== "") {
             return (
               <>
                 <article className="page" key={`3up${i}`} >
-                  <p > {this.state.allTasks[task]}</p>
+                  <p > {task}</p>
                 </article>
                 <br />
               </>

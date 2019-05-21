@@ -3,20 +3,23 @@ import React, { Component } from 'react';
 class CreateTask extends Component {
   constructor(props) {
     super(props);
-    this.state = { task: '' };
 
-    this.handleFormChange = this.handleFormChange.bind(this);
+    this.state = { newTask: '' };
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleFormChange = (e) => {
     this.setState({
-      task: e.target.value,
+      newTask: e.target.value,
     })
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log(this.state)
+
+
   }
 
   render() {
@@ -25,7 +28,7 @@ class CreateTask extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             New Task :
-            <textarea rows="3" cols="50" value={this.state.value} onChange={this.handleFormChange} placeholder="Today I need to..." />
+            <textarea rows="3" cols="50" onChange={this.handleFormChange} placeholder="Today I need to..." />
           </label>
           <button><i className="fas fa-check"></i></button>
         </form>

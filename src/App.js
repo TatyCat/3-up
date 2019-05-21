@@ -6,13 +6,7 @@ import CreateTask from './components/CreateTask'
 class App extends Component {
   state = {
     "todaysDate": "",
-    "tasksOfTheDay": [
-      {
-        "one": "",
-        "two": "",
-        "three": "Look at Cat-ipsum"
-      },
-    ]
+    "tasksOfTheDay": ["Look at Cat-ipsum", "eop"]
   }
 
 
@@ -30,8 +24,8 @@ class App extends Component {
             <span> {this.state.todaysDate}</span>
           </h2>
         </header>
-        <CreateTask />
-        <ToDoItems taskState={this.state.tasksOfTheDay[0]} />
+        <CreateTask parentState={this.state.tasksOfTheDay} />
+        <ToDoItems taskState={this.state.tasksOfTheDay} />
         <Motivation />
       </>
     )
@@ -41,8 +35,8 @@ class App extends Component {
 export default App
 
 
-        // [x] Create Todo card
-        // [] Troubleshoot unique key for task item
-        // [] Dont render paper if data is blank
-        // [] Submit New task item
-        // [] Update/Delete modal
+          // [x] Create Todo card
+          // [] Troubleshoot unique key for task item
+          // [] Dont render paper if data is blank
+          // [] Submit New task item
+          // [] Update/Delete modal
