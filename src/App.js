@@ -8,8 +8,8 @@ class App extends Component {
     "todaysDate": "",
     "tasksOfTheDay": [
       {
-        "one": "Go to the bank and deposit",
-        "two": "Push a project to Github and create an app",
+        "one": "",
+        "two": "",
         "three": "Look at Cat-ipsum"
       },
     ]
@@ -43,5 +43,6 @@ export default App
 
         // [x] Create Todo card
         // [] Troubleshoot unique key for task item
+        // [] Dont render paper if data is blank
         // [] Submit New task item
         // [] Update/Delete modal
