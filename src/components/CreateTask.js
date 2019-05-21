@@ -5,10 +5,7 @@ class CreateTask extends Component {
     super(props);
 
     this.state = { newTask: '' };
-    // console.log(this.props)
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.callbackToParent = this.props.callbackToParent
-
   }
 
   handleFormChange = (e) => {
@@ -19,12 +16,17 @@ class CreateTask extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.props.parentState <= 3) {
-      this.setState({
-        newTask: this.state.newTask
-      })
+
+    if (this.props.parentState.length < 3 && this.state.newTask !== "") {
+      this.props.callbackFromChild(this.state.newTask)
     }
-    this.props.callbackFromChild(this.state.newTask)
+    if (this.props.parentState.length > 2) {
+      alert("Too much sauce. You've hit the max for the day.")
+    }
+    this.setState({
+      newTask: ""
+    })
+
   }
 
   render() {
@@ -33,12 +35,10 @@ class CreateTask extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             New Task :
-            <textarea rows="3" cols="50" onChange={this.handleFormChange} placeholder="Today I need to..." />
+            <textarea rows="3" cols="50" onChange={this.handleFormChange} value={this.state.newTask} placeholder="Today I need to..." />
           </label>
           <button><i className="fas fa-check"></i></button>
         </form>
-        {/* <CreateTask callbackToParent={this.callbackToParent} /> */}
-
       </>
     );
   }

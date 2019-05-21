@@ -3,15 +3,14 @@ import React, { Component } from 'react';
 class toDoItems extends Component {
   constructor(props) {
     super(props)
-    const tasksList = this.props
 
-    this.updateState = this.updateState.bind(this)
     this.state = {
-      allTasks: []
+      allTasks: props.taskState
     }
   }
 
-  updateState() {
+
+  updateState = () => {
     this.setState({
       allTasks: this.props.taskState
     })
@@ -21,14 +20,22 @@ class toDoItems extends Component {
     this.updateState()
   }
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.taskState !== prevState.allTasks) {
+      return { allTasks: nextProps.taskState }
+    }
+    else return null
+  }
+
   render() {
     return (
       <>
+        {console.log(this.state.allTasks)}
         {this.state.allTasks.map((task, i) => {
           if (task !== "") {
             return (
               <>
-                <article className="page" key={`3up${i}`} >
+                <article className="page" key={task + i + Math.random()} >
                   <p > {task}</p>
                 </article>
                 <br />
