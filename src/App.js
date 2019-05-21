@@ -11,7 +11,7 @@ class App extends Component {
 
   state = {
     "todaysDate": "",
-    "tasksOfTheDay": ["Look at Cat-ipsum", "copper"]
+    "tasksOfTheDay": []
   }
 
   componentDidMount() {
@@ -39,7 +39,6 @@ class App extends Component {
         {this.state.tasksOfTheDay.length < 3 &&
           < CreateTask callbackFromChild={this.callbackFromChild} parentState={this.state.tasksOfTheDay} />
         }
-        {/* <CreateTask callbackFromChild={this.callbackFromChild} parentState={this.state.tasksOfTheDay} /> */}
         <ToDoItems taskState={this.state.tasksOfTheDay} />
         <Motivation />
       </>
@@ -57,9 +56,11 @@ export default App
           // [x] State recieves new item and repopulates list. 
           // [x] Clear text area after task submit
           // [x] Does not update state if it's an empty string
-
           // [x] If tasks for the day full, dont show add component
 
 
-
+          // [] at start of a new day, clear out task array. 
+          // [] at start of a new day, generate a new motivation.
           // [] Update/Delete modal 
+
+          // future>> [] Opt out of clear data in each day or pin some tasks
