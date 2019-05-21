@@ -5,8 +5,10 @@ class CreateTask extends Component {
     super(props);
 
     this.state = { newTask: '' };
-
+    // console.log(this.props)
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.callbackToParent = this.props.callbackToParent
+
   }
 
   handleFormChange = (e) => {
@@ -17,9 +19,12 @@ class CreateTask extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state)
-
-
+    if (this.props.parentState <= 3) {
+      this.setState({
+        newTask: this.state.newTask
+      })
+    }
+    this.props.callbackFromChild(this.state.newTask)
   }
 
   render() {
@@ -32,6 +37,8 @@ class CreateTask extends Component {
           </label>
           <button><i className="fas fa-check"></i></button>
         </form>
+        {/* <CreateTask callbackToParent={this.callbackToParent} /> */}
+
       </>
     );
   }

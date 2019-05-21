@@ -9,11 +9,15 @@ class App extends Component {
     "tasksOfTheDay": ["Look at Cat-ipsum", "eop"]
   }
 
-
   componentDidMount() {
     let getTodaysDate = new Date()
     this.setState({ todaysDate: getTodaysDate.toDateString() })
   }
+
+  callbackFromChild = (dataFromChild) => {
+    console.log(dataFromChild + "IP")
+  }
+
 
   render() {
     return (
@@ -24,7 +28,7 @@ class App extends Component {
             <span> {this.state.todaysDate}</span>
           </h2>
         </header>
-        <CreateTask parentState={this.state.tasksOfTheDay} />
+        <CreateTask callbackFromChild={this.callbackFromChild} parentState={this.state.tasksOfTheDay} />
         <ToDoItems taskState={this.state.tasksOfTheDay} />
         <Motivation />
       </>
@@ -37,6 +41,7 @@ export default App
 
           // [x] Create Todo card
           // [] Troubleshoot unique key for task item
-          // [] Dont render paper if data is blank
-          // [] Submit New task item
-          // [] Update/Delete modal
+          // [x] Don't render paper if data is blank
+          // [] Submit New task item to state
+          // [] Clear text area after task submit
+          // [] Update/Delete modal 
