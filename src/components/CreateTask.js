@@ -20,9 +20,11 @@ class CreateTask extends Component {
     if (this.props.parentState.length < 3 && this.state.newTask !== "") {
       this.props.callbackFromChild(this.state.newTask)
     }
-    if (this.props.parentState.length > 2) {
+
+    if (this.props.parentState.length > 2 && this.state.newTask !== "") {
       alert("Too much sauce. You've hit the max for the day.")
     }
+
     this.setState({
       newTask: ""
     })
