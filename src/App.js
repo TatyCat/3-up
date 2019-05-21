@@ -11,7 +11,7 @@ class App extends Component {
 
   state = {
     "todaysDate": "",
-    "tasksOfTheDay": ["Look at Cat-ipsum", "eop"]
+    "tasksOfTheDay": ["Look at Cat-ipsum", "copper"]
   }
 
   componentDidMount() {
@@ -36,7 +36,10 @@ class App extends Component {
             <span> {this.state.todaysDate}</span>
           </h2>
         </header>
-        <CreateTask callbackFromChild={this.callbackFromChild} parentState={this.state.tasksOfTheDay} />
+        {this.state.tasksOfTheDay.length < 3 &&
+          < CreateTask callbackFromChild={this.callbackFromChild} parentState={this.state.tasksOfTheDay} />
+        }
+        {/* <CreateTask callbackFromChild={this.callbackFromChild} parentState={this.state.tasksOfTheDay} /> */}
         <ToDoItems taskState={this.state.tasksOfTheDay} />
         <Motivation />
       </>
@@ -48,12 +51,14 @@ export default App
 
 
           // [x] Create Todo card
-          // [] Troubleshoot unique key for task item error that wont go away
+          // [x] Troubleshoot unique key for task item error that wont go away
           // [x] Don't render paper if data is blank
           // [x] Submit New task item to state
           // [x] State recieves new item and repopulates list. 
           // [x] Clear text area after task submit
-          // [] Does not update state if it's an empty string
+          // [x] Does not update state if it's an empty string
+
+          // [x] If tasks for the day full, dont show add component
 
 
 

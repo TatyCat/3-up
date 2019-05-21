@@ -30,18 +30,15 @@ class toDoItems extends Component {
   render() {
     return (
       <>
-        {console.log(this.state.allTasks)}
         {this.state.allTasks.map((task, i) => {
-          if (task !== "") {
-            return (
-              <>
-                <article className="page" key={task + i + Math.random()} >
-                  <p > {task}</p>
-                </article>
-                <br />
-              </>
-            )
-          }
+          return (
+            <article key={task + i + Math.random()} >
+              <section className="page" >
+                <p > {task}</p>
+              </section>
+              <br />
+            </article>
+          )
         })
         }
       </>

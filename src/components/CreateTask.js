@@ -28,7 +28,6 @@ class CreateTask extends Component {
     this.setState({
       newTask: ""
     })
-
   }
 
   render() {
