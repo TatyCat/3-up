@@ -34,7 +34,7 @@ class toDoItems extends Component {
           return (
             <article key={task + i + Math.random()} >
               <section className="page" >
-                <p > {task}</p>
+                <p>{task}</p>
               </section>
               <br />
             </article>

@@ -12,11 +12,13 @@ class CreateTask extends Component {
     this.setState({
       newTask: e.target.value,
     })
+    if (e.keyCode === 13 && e.shiftKey === false) {
+      this.handleSubmit(e)
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-
     if (this.props.parentState.length < 3 && this.state.newTask !== "") {
       this.props.callbackFromChild(this.state.newTask)
     }
@@ -36,9 +38,9 @@ class CreateTask extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             New Task :
-            <textarea rows="3" cols="50" onChange={this.handleFormChange} value={this.state.newTask} placeholder="Today I need to..." />
+            <textarea rows="3" cols="50" onChange={this.handleFormChange} value={this.state.newTask} onKeyDown={this.handleFormChange} placeholder="Today I need to..." />
           </label>
-          <button><i className="fas fa-check"></i></button>
+          <button type="submit"><i className="fas fa-check"></i></button>
         </form>
       </>
     );
