@@ -14,17 +14,29 @@ class App extends Component {
     "tasksOfTheDay": []
   }
 
+
   componentDidMount() {
-    let getTodaysDate = new Date()
+    const getTodaysDate = new Date()
     this.setState({ todaysDate: getTodaysDate.toDateString() })
+
+    setInterval(this.endOfDayTaskDelete, 1000)
   }
 
   callbackFromChild = (dataFromChild) => {
     this.setState({
       tasksOfTheDay: this.state.tasksOfTheDay.concat(dataFromChild)
     })
-
   }
+
+  endOfDayTaskDelete = () => {
+    let getTodaysDate = new Date()
+    // console.log(getTodaysDate.toLocaleTimeString() === "12:32:50 AM")
+    if (getTodaysDate.toLocaleTimeString() === "12:00:00 AM") {
+      this.setState({ tasksOfTheDay: [] })
+    }
+    // if(getTodaysDate.toLocaleTimeString() === "11:59:00 AM")
+  }
+
 
 
   render() {
@@ -59,8 +71,8 @@ export default App
           // [x] If tasks for the day full, dont show add component
 
 
-          // [] at start of a new day, clear out task array. 
-          // [] at start of a new day, generate a new motivation.
+          // [x] at start of a new day, clear out task array. 
+          // [x] randomly generate a new motivation.
           // [] Update/Delete modal 
 
           // future>> [] Opt out of clear data in each day or pin some tasks
