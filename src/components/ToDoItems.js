@@ -5,10 +5,10 @@ class toDoItems extends Component {
     super(props)
 
     this.state = {
-      allTasks: props.taskState
+      "allTasks": props.taskState,
+      "completed": false,
     }
   }
-
 
   updateState = () => {
     this.setState({
@@ -27,13 +27,17 @@ class toDoItems extends Component {
     else return null
   }
 
+  markComplete = () => {
+    this.setState({ completed: !this.state.completed })
+  }
+
   render() {
     return (
       <>
         {this.state.allTasks.map((task, i) => {
           return (
             <article key={task + i + Math.random()} >
-              <section className="page" >
+              <section className={this.state.completed ? "page done" : "page"} onClick={this.markComplete}  >
                 <p>{task}</p>
               </section>
               <br />

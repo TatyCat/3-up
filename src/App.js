@@ -69,10 +69,11 @@ export default App
           // [x] Clear text area after task submit
           // [x] Does not update state if it's an empty string
           // [x] If tasks for the day full, dont show add component
-
-
           // [x] at start of a new day, clear out task array. 
           // [x] randomly generate a new motivation.
-          // [] Update/Delete modal 
+
+          // [] onclick of paper, toggle taskDone.
+          // [] Update/Delete modal for task papers
+
 
           // future>> [] Opt out of clear data in each day or pin some tasks
