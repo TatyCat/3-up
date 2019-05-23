@@ -3,10 +3,9 @@ import React, { Component } from 'react';
 class toDoItems extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-
-    }
+    this.state = {}
   }
+
   componentDidMount() {
     this.setState({
       "allTasks": this.props.taskState,
@@ -35,8 +34,7 @@ class toDoItems extends Component {
             <article key={i + "3up"}>
               <section className={this.state[i] ? "page done" : "page"} onClick={() => this.markComplete(i)}>
                 <p>{taskObj.task}</p>
-                {/* <button>Edit</button> */}
-                {/* <button>Delete</button> */}
+                <button onClick={() => this.props.deleteTask(i)} className={this.state[i] ? "showButton" : "hideButton"}>Delete</button>
               </section>
               <br />
             </article>
@@ -49,3 +47,5 @@ class toDoItems extends Component {
 }
 
 export default toDoItems;
+
+                // {/* <button className={this.state[i] ? "showButton" : "hideButton"}>Edit</button> */}

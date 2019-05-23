@@ -183,3 +183,21 @@ div p {
   color: grey;
   opacity: .4;
 }
+
+.hideButton {
+  visibility: hidden;
+}
+
+.showButton {
+  visibility: visible;
+  border: none;
+  padding: 4px 7px;
+  margin-left: .5rem;
+  background-color: rgb(160, 160, 160);
+  color: rgb(245, 245, 86);
+}
+
+/* 
+.showButton:nth-child(2) {
+  margin-left: 2rem;
+} */

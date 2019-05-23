@@ -11,16 +11,7 @@ class App extends Component {
 
   state = {
     "todaysDate": "",
-    "tasksOfTheDay": [
-      {
-        "task": "look for viable ways to earn income",
-      }
-      , {
-        "task": "2look for viable ways to earn income",
-      }
-      , {
-        "task": "4look for viable ways to earn income",
-      }],
+    "tasksOfTheDay": [],
   }
 
 
@@ -45,6 +36,9 @@ class App extends Component {
     }
   }
 
+  deleteTask = (indexNumber) => {
+    this.setState({ tasksOfTheDay: this.state.tasksOfTheDay.filter(taskCompleted => taskCompleted !== this.state.tasksOfTheDay[indexNumber]) })
+  }
 
 
   render() {
@@ -59,7 +53,7 @@ class App extends Component {
         {this.state.tasksOfTheDay.length < 3 &&
           < CreateTask callbackFromChild={this.callbackFromChild} parentState={this.state.tasksOfTheDay} />
         }
-        <ToDoItems taskState={this.state.tasksOfTheDay} />
+        <ToDoItems deleteTask={this.deleteTask} taskState={this.state.tasksOfTheDay} />
         <Motivation />
       </>
     )
@@ -81,7 +75,10 @@ export default App
 // [x] randomly generate a new motivation.
 
 // [x] onclick of paper, toggle taskDone.
-// [] Update/Delete modal for task papers
+// [x] Fix Create Task Component due to data type change
+// [x] Delete task papers
+// [x] Clear text area after submit & change of data type
 
 
+// future >> [] Edit to-dos
 // future>> [] Opt out of clear data in each day or pin some tasks
