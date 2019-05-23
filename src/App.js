@@ -11,7 +11,16 @@ class App extends Component {
 
   state = {
     "todaysDate": "",
-    "tasksOfTheDay": []
+    "tasksOfTheDay": [
+      {
+        "task": "look for viable ways to earn income",
+      }
+      , {
+        "task": "2look for viable ways to earn income",
+      }
+      , {
+        "task": "4look for viable ways to earn income",
+      }],
   }
 
 
@@ -30,11 +39,10 @@ class App extends Component {
 
   endOfDayTaskDelete = () => {
     let getTodaysDate = new Date()
-    // console.log(getTodaysDate.toLocaleTimeString() === "12:32:50 AM")
+
     if (getTodaysDate.toLocaleTimeString() === "12:00:00 AM") {
       this.setState({ tasksOfTheDay: [] })
     }
-    // if(getTodaysDate.toLocaleTimeString() === "11:59:00 AM")
   }
 
 
@@ -61,19 +69,19 @@ class App extends Component {
 export default App
 
 
-          // [x] Create Todo card
-          // [x] Troubleshoot unique key for task item error that wont go away
-          // [x] Don't render paper if data is blank
-          // [x] Submit New task item to state
-          // [x] State recieves new item and repopulates list. 
-          // [x] Clear text area after task submit
-          // [x] Does not update state if it's an empty string
-          // [x] If tasks for the day full, dont show add component
-          // [x] at start of a new day, clear out task array. 
-          // [x] randomly generate a new motivation.
+// [x] Create Todo card
+// [x] Troubleshoot unique key for task item error that wont go away
+// [x] Don't render paper if data is blank
+// [x] Submit New task item to state
+// [x] State recieves new item and repopulates list. 
+// [x] Clear text area after task submit
+// [x] Does not update state if it's an empty string
+// [x] If tasks for the day full, dont show add component
+// [x] at start of a new day, clear out task array. 
+// [x] randomly generate a new motivation.
 
-          // [] onclick of paper, toggle taskDone.
-          // [] Update/Delete modal for task papers
+// [x] onclick of paper, toggle taskDone.
+// [] Update/Delete modal for task papers
 
 
-          // future>> [] Opt out of clear data in each day or pin some tasks
+// future>> [] Opt out of clear data in each day or pin some tasks

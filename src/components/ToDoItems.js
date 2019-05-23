@@ -3,21 +3,17 @@ import React, { Component } from 'react';
 class toDoItems extends Component {
   constructor(props) {
     super(props)
-
     this.state = {
-      "allTasks": props.taskState,
-      "completed": false,
+
     }
   }
-
-  updateState = () => {
-    this.setState({
-      allTasks: this.props.taskState
-    })
-  }
-
   componentDidMount() {
-    this.updateState()
+    this.setState({
+      "allTasks": this.props.taskState,
+      "0": false,
+      "1": false,
+      "2": false,
+    })
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -27,18 +23,20 @@ class toDoItems extends Component {
     else return null
   }
 
-  markComplete = () => {
-    this.setState({ completed: !this.state.completed })
+  markComplete = (e) => {
+    this.setState({ [e]: !this.state[e] })
   }
 
   render() {
     return (
       <>
-        {this.state.allTasks.map((task, i) => {
+        {this.state.allTasks.map((taskObj, i) => {
           return (
-            <article key={task + i + Math.random()} >
-              <section className={this.state.completed ? "page done" : "page"} onClick={this.markComplete}  >
-                <p>{task}</p>
+            <article key={i + "3up"}>
+              <section className={this.state[i] ? "page done" : "page"} onClick={() => this.markComplete(i)}>
+                <p>{taskObj.task}</p>
+                {/* <button>Edit</button> */}
+                {/* <button>Delete</button> */}
               </section>
               <br />
             </article>
